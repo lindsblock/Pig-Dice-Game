@@ -16,7 +16,7 @@ init();
 
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
-  // if(gamePlaying) {
+  if(gamePlaying) {
     //random number
     var dice = Math.floor(Math.random() * 6) + 1;
 
@@ -33,12 +33,12 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     } else {
       nextPlayer();
     }
-  // }
+  }
 });
 
 
 document.querySelector('.btn-hold').addEventListener('click', function() {
-  // if(gamePlaying) {
+  if(gamePlaying) {
     //add current score to global score
     scores[activePlayer] += roundScore;
     //scores[activePlayer] =  scores[activePlayer] + roundScore;     same thing
@@ -56,7 +56,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     } else {
       nextPlayer();
     }
-  // }
+   }
 });
 
 function nextPlayer() {
@@ -79,6 +79,7 @@ function init() {
  scores = [0,0];
  activePlayer = 0;
  roundScore = 0;
+ gamePlaying = true;
 
  document.querySelector('.dice').style.display = 'none';
 
